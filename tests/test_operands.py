@@ -7,8 +7,6 @@ def declare_instance():
 
 
 def test_variable_types():
-    operands = Operands()
-    operands.first_operand = 1
-    operands.second_operand = 2
+    operands = Operands(1, 2)
     assert isinstance(operands.first_operand, int)
     assert isinstance(operands.second_operand, int)
