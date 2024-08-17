@@ -1,31 +1,32 @@
 from unittest import mock
 
-import src.pytemplate.entrypoints.cli.main as cli
+from src.pytemplate.entrypoints.cli.main import main
 
 
-def test_add(monkeypatch):
-    inputs = iter(["1", "2", "add"])
-    mock.patch("builtins.input", lambda: next(inputs))
-    result = cli.main()
-    assert result == 3
+def test_add():
+    inputs = iter(["6", "2", "add"])
+    with mock.patch("builtins.input", lambda: next(inputs)):
+        result = main()
+        assert result == 8
 
 
-def test_subtract(monkeypatch):
+def test_subtract():
     inputs = iter(["1", "2", "subtract"])
-    mock.patch("builtins.input", lambda: next(inputs))
-    result = cli.main()
-    assert result == -1
+    with mock.patch("builtins.input", lambda: next(inputs)):
+        result = main()
+        assert result == -1
 
 
-def test_divide(monkeypatch):
+def test_divide():
     inputs = iter(["1", "2", "multiply"])
-    mock.patch("builtins.input", lambda: next(inputs))
-    result = cli.main()
-    assert result == 2
+    with mock.patch("builtins.input", lambda: next(inputs)):
+        result = main()
+        assert result == 2
 
 
-def test_multiply(monkeypatch):
+
+def test_multiply():
     inputs = iter(["1", "2", "divide"])
-    mock.patch("builtins.input", lambda: next(inputs))
-    result = cli.main()
-    assert result == 0.5
+    with mock.patch("builtins.input", lambda: next(inputs)):
+        result = main()
+        assert result == 0.5
