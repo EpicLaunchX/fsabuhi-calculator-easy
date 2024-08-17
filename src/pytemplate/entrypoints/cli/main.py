@@ -2,7 +2,10 @@ from src.pytemplate.domain.models import operands_factory
 from src.pytemplate.service.calculator import Calculator
 
 
-def main(first_operand: int, second_operand: int, action):
+def main():
+    first_operand = int(input())
+    second_operand = int(input())
+    action = input()
     calculator = Calculator()
     operands = operands_factory(first_operand, second_operand)
     if action == "add":
