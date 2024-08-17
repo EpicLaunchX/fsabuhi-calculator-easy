@@ -24,7 +24,6 @@ def test_divide():
         assert result == 2
 
 
-
 def test_multiply():
     inputs = iter(["1", "2", "divide"])
     with mock.patch("builtins.input", lambda: next(inputs)):
